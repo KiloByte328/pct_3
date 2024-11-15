@@ -39,6 +39,10 @@ int main(int argc, char** argv)
     double time = MPI_Wtime() - start;
     if (rank == 0)
         printf("DGEMV succesful, time is: %f\n", time);
+    free(C);
+    free(C_temp);
+    free(B);
+    free(A);
     MPI_Finalize();
     return 0;
 }
