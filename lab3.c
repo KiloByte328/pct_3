@@ -12,10 +12,14 @@ int main(int argc, char** argv)
     double C[n];
     double C_temp[n];
     double B[m];
+    for (size_t k = 0; k < m; k++)
+    {
+        B[k] = k;
+    }
     for (size_t k = 0; k < n; k++)
     {
+        C[k] = 0.0;
         C_temp[k] = 0.0;
-        B[k] = k;
     }
     double A[(n / commsize) * m];
     double start = MPI_Wtime();
